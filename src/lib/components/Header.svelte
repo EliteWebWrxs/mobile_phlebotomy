@@ -4,6 +4,7 @@
 	const pages = [
 		{ name: 'Services', href: '/services' },
 		{ name: 'About', href: '/about' },
+		{ name: 'Appointments', href: '/appointments' },
 		{ name: 'Contact', href: '/contact' },
 		{ name: 'FAQ', href: '/faq' }
 	];
@@ -33,9 +34,7 @@
 	}
 
 	.logoContainer {
-		width: 5rem;
-		--taglineDisplay: none;
-		--companyNameDisplay: none;
+		width: clamp(3rem, 5vw, 5.5rem);
 		aspect-ratio: 1 / 1;
 		overflow: hidden;
 	}
@@ -48,5 +47,10 @@
 	nav ul li {
 		list-style: none;
 		font-size: 1.2rem;
+	}
+
+	nav ul li a {
+		text-decoration: none;
+		color: #333;
 	}
 </style>
