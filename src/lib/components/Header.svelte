@@ -1,5 +1,6 @@
 <script>
 	import Logo from '$lib/components/Logo.svelte';
+	import { page } from '$app/state';
 
 	const pages = [
 		{ name: 'Services', href: '/services' },
@@ -8,6 +9,8 @@
 		{ name: 'Contact', href: '/contact' },
 		{ name: 'FAQ', href: '/faq' }
 	];
+
+	const currentPath = $derived(page.url.pathname);
 </script>
 
 <header>
@@ -19,7 +22,9 @@
 	<nav>
 		<ul>
 			{#each pages as page}
-				<li><a href={page.href}>{page.name}</a></li>
+				<li class={page.href === currentPath ? 'active' : ''}>
+					<a href={page.href}>{page.name}</a>
+				</li>
 			{/each}
 		</ul>
 	</nav>
@@ -47,10 +52,33 @@
 	nav ul li {
 		list-style: none;
 		font-size: 1.2rem;
+		color: #333;
+		position: relative;
+		transition: scale 0.3s ease;
+		&:hover {
+			scale: 1.1;
+		}
+		&:after {
+			content: '';
+			display: block;
+			width: 0;
+			height: 2px;
+		}
+		&.active {
+			color: var(--secondaryColor);
+			&:after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 2px;
+				background-color: var(--secondaryColor);
+				transition: width 0.3s ease;
+			}
+		}
 	}
 
 	nav ul li a {
 		text-decoration: none;
-		color: #333;
+		color: inherit;
 	}
 </style>

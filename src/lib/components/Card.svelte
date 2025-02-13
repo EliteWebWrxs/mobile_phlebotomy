@@ -22,11 +22,9 @@
 		color: var(--cardTextColor);
 		padding: 2rem 1rem 1rem;
 		border-radius: 0.5rem;
-		margin-top: 6rem;
 		position: relative;
-		/* border: 1px solid var(--secondaryColor); */
 		gap: 2rem;
-		box-shadow: 0 0 1.25rem 0 rgba(0, 0, 0, 0.7);
+		box-shadow: 0 0.5rem 1.25rem 0 oklch(0 0 0 / 0.4);
 	}
 
 	.cardImage {

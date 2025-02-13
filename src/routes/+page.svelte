@@ -1,7 +1,7 @@
 <script>
 	import Logo from '$lib/components/Logo.svelte';
 	import Card from '$lib/components/Card.svelte';
-	import { BloodDraw, Phlebotomist, Calendar } from '$lib/images';
+	import { BloodDraw, Phlebotomist, Calendar, BloodDrawB, BloodDrawC } from '$lib/images';
 
 	const cards = [
 		{
@@ -52,6 +52,50 @@
 	{/each}
 </div>
 
+<div class="contentContainer">
+	<h2>More Info</h2>
+	<div class="imgContainer right"><img src={BloodDrawB} alt="Blood Draw" /></div>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis laboriosam ratione earum
+		sed dolor, repellat temporibus sequi quae explicabo voluptas aliquam vitae excepturi consectetur
+		vero! Modi voluptatum obcaecati incidunt possimus!
+	</p>
+	<p>
+		Inventore cumque accusantium explicabo assumenda rerum provident animi ipsum dicta molestias
+		quia, nesciunt, dolor facere. Nobis, quis? Harum possimus iusto nemo, earum, ducimus deleniti
+		nihil tempora consequatur, eligendi doloribus omnis.
+	</p>
+	<p>
+		Molestias qui molestiae eos sed eius obcaecati sit autem ratione hic tempora distinctio sapiente
+		sunt architecto cumque rerum, veritatis harum tempore natus, numquam velit fugit voluptas magni
+		eum aliquam? Vero.
+	</p>
+	<p>
+		Ad ipsum doloremque ea tempora temporibus excepturi magni vel sit? Cupiditate iste quae ipsam
+		fuga ratione, itaque fugiat dolores id dolorum blanditiis ex alias temporibus accusantium
+		reiciendis quaerat perspiciatis fugit!
+	</p>
+	<p>
+		Quos maxime optio ipsa debitis corrupti soluta quasi harum animi dolor exercitationem blanditiis
+		deleniti, quas eveniet accusamus praesentium rem veniam doloremque sequi? Culpa maiores eveniet
+		ex debitis, consequatur non cum?
+	</p>
+	<ul>
+		<li>
+			<h3>Item 1</h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+		</li>
+		<li>
+			<h3>Item 2</h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+		</li>
+		<li>
+			<h3>Item 3</h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+		</li>
+	</ul>
+</div>
+
 <style>
 	.hero {
 		display: grid;
@@ -88,9 +132,11 @@
 
 	.cards {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 		gap: 2.5rem;
-		padding: 0 1.5rem;
+		padding: 4vh 1.5rem 0;
+		max-width: 1800px;
+		margin: 0 auto;
 	}
 
 	.blob-c {
@@ -183,6 +229,13 @@
 		animation:
 			transform 5s ease-in-out infinite both alternate,
 			movement_two 5s ease-in-out infinite both;
+	}
+	.imgContainer {
+		width: 35%;
+		&.right {
+			float: right;
+			margin: 0 0 1rem 1rem;
+		}
 	}
 
 	@keyframes transform {
