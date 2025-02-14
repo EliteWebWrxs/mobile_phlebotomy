@@ -10,7 +10,7 @@
 <!-- Calendly inline widget begin -->
 <div
 	class="calendly-inline-widget"
-	data-url="https://calendly.com/mikedaugherty-msdweb/30min?primary_color=336699"
+	data-url="https://calendly.com/mikedaugherty-msdweb/30min?primary_color=038BC7"
 	style="min-width:320px;height:700px;"
 ></div>
 <!-- Calendly inline widget end -->

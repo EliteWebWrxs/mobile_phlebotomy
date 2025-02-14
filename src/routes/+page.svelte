@@ -134,7 +134,7 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 		gap: 2.5rem;
-		padding: 4vh 1.5rem 0;
+		padding: 6vh 1.5rem 2vh;
 		max-width: 1800px;
 		margin: 0 auto;
 	}
