@@ -1,7 +1,11 @@
 <script>
+	import { onMount } from 'svelte';
+	import { scale, fade, fly } from 'svelte/transition';
 	import Logo from '$lib/components/Logo.svelte';
 	import Card from '$lib/components/Card.svelte';
 	import { BloodDraw, Phlebotomist, Calendar, BloodDrawB, BloodDrawC } from '$lib/images';
+
+	let isLoaded = false;
 
 	const cards = [
 		{
@@ -23,78 +27,86 @@
 			link: '/appointments'
 		}
 	];
+
+	onMount(() => {
+		isLoaded = true;
+	});
 </script>
 
-<div class="hero">
-	<div class="blob-c">
-		<div class="shape-blob"></div>
-		<div class="shape-blob one"></div>
-		<div class="shape-blob two"></div>
-		<div class="shape-blob three"></div>
-		<div class="shape-blob four"></div>
-		<div class="shape-blob five"></div>
-		<div class="shape-blob six"></div>
-	</div>
-	<div class="content">
-		<div class="logo">
-			<Logo />
+{#if isLoaded}
+	<div class="hero">
+		<div class="blob-c">
+			<div class="shape-blob"></div>
+			<div class="shape-blob one"></div>
+			<div class="shape-blob two"></div>
+			<div class="shape-blob three"></div>
+			<div class="shape-blob four"></div>
+			<div class="shape-blob five"></div>
+			<div class="shape-blob six"></div>
 		</div>
-		<div class="titleContainer">
-			<h1 class="title">Helping Hands</h1>
-			<p class="tagline">Mobile Phlebotomy Service</p>
+		<div class="content">
+			<div class="logo">
+				<Logo />
+			</div>
+			<div class="titleContainer">
+				<h1 class="title">Helping Hands</h1>
+				<p class="tagline">Mobile Phlebotomy Service</p>
+			</div>
 		</div>
 	</div>
-</div>
 
-<div class="cards">
-	{#each cards as cardContent}
-		<Card {cardContent} />
-	{/each}
-</div>
+	<div class="cards">
+		{#each cards as cardContent, i}
+			<div class="cardContainer" in:fly|global={{ duration: 500, delay: i * 350, y: 100 }}>
+				<Card {cardContent} />
+			</div>
+		{/each}
+	</div>
 
-<div class="contentContainer">
-	<h2>More Info</h2>
-	<div class="imgContainer right"><img src={BloodDrawB} alt="Blood Draw" /></div>
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis laboriosam ratione earum
-		sed dolor, repellat temporibus sequi quae explicabo voluptas aliquam vitae excepturi consectetur
-		vero! Modi voluptatum obcaecati incidunt possimus!
-	</p>
-	<p>
-		Inventore cumque accusantium explicabo assumenda rerum provident animi ipsum dicta molestias
-		quia, nesciunt, dolor facere. Nobis, quis? Harum possimus iusto nemo, earum, ducimus deleniti
-		nihil tempora consequatur, eligendi doloribus omnis.
-	</p>
-	<p>
-		Molestias qui molestiae eos sed eius obcaecati sit autem ratione hic tempora distinctio sapiente
-		sunt architecto cumque rerum, veritatis harum tempore natus, numquam velit fugit voluptas magni
-		eum aliquam? Vero.
-	</p>
-	<p>
-		Ad ipsum doloremque ea tempora temporibus excepturi magni vel sit? Cupiditate iste quae ipsam
-		fuga ratione, itaque fugiat dolores id dolorum blanditiis ex alias temporibus accusantium
-		reiciendis quaerat perspiciatis fugit!
-	</p>
-	<p>
-		Quos maxime optio ipsa debitis corrupti soluta quasi harum animi dolor exercitationem blanditiis
-		deleniti, quas eveniet accusamus praesentium rem veniam doloremque sequi? Culpa maiores eveniet
-		ex debitis, consequatur non cum?
-	</p>
-	<ul>
-		<li>
-			<h3>Item 1</h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-		</li>
-		<li>
-			<h3>Item 2</h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-		</li>
-		<li>
-			<h3>Item 3</h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-		</li>
-	</ul>
-</div>
+	<div class="contentContainer" in:fade|global={{ duration: 700, delay: 1000 }}>
+		<h2>More Info</h2>
+		<div class="imgContainer right"><img src={BloodDrawB} alt="Blood Draw" /></div>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis laboriosam ratione earum
+			sed dolor, repellat temporibus sequi quae explicabo voluptas aliquam vitae excepturi
+			consectetur vero! Modi voluptatum obcaecati incidunt possimus!
+		</p>
+		<p>
+			Inventore cumque accusantium explicabo assumenda rerum provident animi ipsum dicta molestias
+			quia, nesciunt, dolor facere. Nobis, quis? Harum possimus iusto nemo, earum, ducimus deleniti
+			nihil tempora consequatur, eligendi doloribus omnis.
+		</p>
+		<p>
+			Molestias qui molestiae eos sed eius obcaecati sit autem ratione hic tempora distinctio
+			sapiente sunt architecto cumque rerum, veritatis harum tempore natus, numquam velit fugit
+			voluptas magni eum aliquam? Vero.
+		</p>
+		<p>
+			Ad ipsum doloremque ea tempora temporibus excepturi magni vel sit? Cupiditate iste quae ipsam
+			fuga ratione, itaque fugiat dolores id dolorum blanditiis ex alias temporibus accusantium
+			reiciendis quaerat perspiciatis fugit!
+		</p>
+		<p>
+			Quos maxime optio ipsa debitis corrupti soluta quasi harum animi dolor exercitationem
+			blanditiis deleniti, quas eveniet accusamus praesentium rem veniam doloremque sequi? Culpa
+			maiores eveniet ex debitis, consequatur non cum?
+		</p>
+		<ul>
+			<li>
+				<h3>Item 1</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+			</li>
+			<li>
+				<h3>Item 2</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+			</li>
+			<li>
+				<h3>Item 3</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+			</li>
+		</ul>
+	</div>
+{/if}
 
 <style>
 	.hero {

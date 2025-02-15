@@ -1,6 +1,8 @@
 :root {
 	--primaryColor: #e15a9c;
 	--secondaryColor: #038bc7;
+
+	interpolate-size: allow-keywords;
 }
 
 body {
@@ -13,4 +15,35 @@ body {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 2rem;
+}
+
+.pageTitle {
+	font-size: 3rem;
+	font-weight: 600;
+	color: var(--secondaryColor);
+	text-align: center;
+}
+p {
+	line-height: 1.5;
+}
+
+.right {
+	float: right;
+	margin-left: 2rem;
+	margin-bottom: 2rem;
+}
+
+.left {
+	float: left;
+	margin-right: 2rem;
+	margin-bottom: 2rem;
+}
+
+button {
+	background-color: var(--secondaryColor);
+	color: white;
+	padding: 0.75rem 2rem;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
 }
