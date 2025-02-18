@@ -26,11 +26,13 @@ export const POST: RequestHandler = async ({ request }) => {
 			to: 'mike@bigbearded.dev',
 			subject: `New Contact Form Submission from ${name}`,
 			html: `
-				<h2>New Contact Form Submission</h2>
+			<body style="font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; font-size: 18px;">
+				<h2 style="color: #038bc7; font-size: 24px; font-weight: 600; text-decoration: underline;">New Contact Form Submission</h2>
 				<p><strong>Name:</strong> ${name}</p>
-				<p><strong>Email:</strong> ${email}</p>
-				<p><strong>Phone:</strong> ${phone}</p>
+				<p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+				<p><strong>Phone:</strong> <a href="tel:${phone}">${phone}</a></p>
 				<p><strong>Message:</strong> ${message}</p>
+			</body>
 			`
 		});
 
