@@ -2,6 +2,13 @@
 	import { fade } from 'svelte/transition';
 </script>
 
+<svelte:head>
+	<meta
+		name="description"
+		content="Comprehensive mobile phlebotomy services for healthcare partners, individuals, physicians, and senior care facilities. Professional blood drawing services at your location."
+	/>
+</svelte:head>
+
 <div class="servicesContainer">
 	<h1>Our Services</h1>
 

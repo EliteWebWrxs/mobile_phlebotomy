@@ -33,6 +33,13 @@
 	});
 </script>
 
+<svelte:head>
+	<meta
+		name="description"
+		content="Professional mobile phlebotomy services. We bring expert blood drawing services directly to your home, office, or care facility for your convenience and comfort."
+	/>
+</svelte:head>
+
 {#if isLoaded}
 	<div class="hero">
 		<div class="blob-c">

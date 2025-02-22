@@ -2,6 +2,13 @@
 	import { BloodDrawB } from '$lib/images';
 </script>
 
+<svelte:head>
+	<meta
+		name="description"
+		content="Licensed and experienced mobile phlebotomists providing safe, convenient blood drawing services. Learn about our commitment to quality care and patient comfort."
+	/>
+</svelte:head>
+
 <h1 class="pageTitle">About</h1>
 
 <div class="contentContainer">

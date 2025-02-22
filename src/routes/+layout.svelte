@@ -7,7 +7,7 @@
 	let title = $state('MSD Web Pro');
 	let currentPage = $state('');
 	let { data, children } = $props();
-	$inspect(data);
+
 	$effect(() => {
 		currentPage = data?.pathname;
 		if (data?.pathname === '/') {

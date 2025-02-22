@@ -94,6 +94,13 @@
 	}
 </script>
 
+<svelte:head>
+	<meta
+		name="description"
+		content="Contact our mobile phlebotomy team for questions or to learn more about our services. We're here to help with your blood drawing needs."
+	/>
+</svelte:head>
+
 <h1 class="pageTitle">Contact Us</h1>
 
 <div class="contentContainer">

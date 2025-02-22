@@ -7,6 +7,10 @@
 		src="https://assets.calendly.com/assets/external/widget.js"
 		async
 	></script>
+	<meta
+		name="description"
+		content="Schedule your mobile phlebotomy appointment online. Flexible scheduling options available for blood draws in your home, office, or care facility."
+	/>
 </svelte:head>
 
 <h1 class="pageTitle">Schedule an Appointment</h1>
