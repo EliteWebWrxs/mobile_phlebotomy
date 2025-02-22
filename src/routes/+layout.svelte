@@ -1,6 +1,7 @@
 <script>
 	import { fade } from 'svelte/transition';
 	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 	import '$lib/css/reset.css';
 	import '$lib/css/styles.css';
 
@@ -38,3 +39,5 @@
 		{@render children?.()}
 	</div>
 {/key}
+
+<Footer />

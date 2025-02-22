@@ -48,3 +48,7 @@ button {
 	border: none;
 	cursor: pointer;
 }
+
+.contentContainer {
+	min-height: calc(100vh - 280px);
+}

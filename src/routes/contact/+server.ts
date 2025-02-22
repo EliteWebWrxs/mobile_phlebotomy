@@ -23,7 +23,7 @@ export const POST: RequestHandler = async ({ request }) => {
 				name: '<-- Web Inquiry -->',
 				address: env.GOOGLE_EMAIL
 			},
-			to: 'mike@bigbearded.dev',
+			to: 'admin@helpinghandsphlebotomy.com',
 			subject: `New Contact Form Submission from ${name}`,
 			html: `
 			<body style="font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; font-size: 18px;">
