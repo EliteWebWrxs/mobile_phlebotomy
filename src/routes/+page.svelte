@@ -10,19 +10,19 @@
 	const cards = [
 		{
 			title: 'Services',
-			body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+			body: 'Professional mobile blood drawing services bringing laboratory care directly to your home, office, or care facility.',
 			image: BloodDraw,
 			link: '/services'
 		},
 		{
 			title: 'About Us',
-			body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+			body: 'Licensed phlebotomists providing convenient, compassionate care with the highest safety standards.',
 			image: Phlebotomist,
 			link: '/about'
 		},
 		{
 			title: 'Appointments',
-			body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
+			body: 'Easy online scheduling for mobile phlebotomy services with flexible timing to accommodate your needs.',
 			image: Calendar,
 			link: '/appointments'
 		}
@@ -64,47 +64,62 @@
 	</div>
 
 	<div class="contentContainer" in:fade|global={{ duration: 700, delay: 1000 }}>
-		<h2>More Info</h2>
-		<div class="imgContainer right"><img src={BloodDrawB} alt="Blood Draw" /></div>
+		<h2>Professional Mobile Phlebotomy Services</h2>
 		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis laboriosam ratione earum
-			sed dolor, repellat temporibus sequi quae explicabo voluptas aliquam vitae excepturi
-			consectetur vero! Modi voluptatum obcaecati incidunt possimus!
+			We specialize in providing convenient, professional blood drawing services right at your
+			doorstep. Our experienced team brings clinical expertise to your home, making healthcare more
+			accessible than ever.
 		</p>
-		<p>
-			Inventore cumque accusantium explicabo assumenda rerum provident animi ipsum dicta molestias
-			quia, nesciunt, dolor facere. Nobis, quis? Harum possimus iusto nemo, earum, ducimus deleniti
-			nihil tempora consequatur, eligendi doloribus omnis.
-		</p>
-		<p>
-			Molestias qui molestiae eos sed eius obcaecati sit autem ratione hic tempora distinctio
-			sapiente sunt architecto cumque rerum, veritatis harum tempore natus, numquam velit fugit
-			voluptas magni eum aliquam? Vero.
-		</p>
-		<p>
-			Ad ipsum doloremque ea tempora temporibus excepturi magni vel sit? Cupiditate iste quae ipsam
-			fuga ratione, itaque fugiat dolores id dolorum blanditiis ex alias temporibus accusantium
-			reiciendis quaerat perspiciatis fugit!
-		</p>
-		<p>
-			Quos maxime optio ipsa debitis corrupti soluta quasi harum animi dolor exercitationem
-			blanditiis deleniti, quas eveniet accusamus praesentium rem veniam doloremque sequi? Culpa
-			maiores eveniet ex debitis, consequatur non cum?
-		</p>
-		<ul>
-			<li>
-				<h3>Item 1</h3>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-			</li>
-			<li>
-				<h3>Item 2</h3>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-			</li>
-			<li>
-				<h3>Item 3</h3>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-			</li>
-		</ul>
+		<div class="infoContent">
+			<section class="infoSection quality">
+				<h3>Quality Collection</h3>
+				<p>
+					Our licensed and insured phlebotomists bring expertise to every appointment. We maintain
+					the highest standards in blood collection, including:
+				</p>
+				<ul>
+					<li>Precise patient identification protocols</li>
+					<li>Advanced sterile techniques</li>
+					<li>Expert venipuncture skills</li>
+					<li>Professional specimen handling</li>
+					<li>Compassionate patient communication</li>
+				</ul>
+			</section>
+
+			<section class="infoSection labs">
+				<h3>Laboratory Partnerships</h3>
+				<p>
+					We ensure reliable specimen delivery to leading laboratories including Advent Health,
+					Quest Diagnostics, and LabCorp. Our team follows strict protocols for temperature control
+					and secure packaging, maintaining sample integrity throughout transport.
+				</p>
+			</section>
+
+			<section class="infoSection safety">
+				<h3>Safety First</h3>
+				<p>
+					Your safety is our priority. Our experienced team follows comprehensive safety protocols
+					and maintains the highest standards of care. Every procedure is performed with meticulous
+					attention to detail, ensuring both safety and comfort.
+				</p>
+			</section>
+
+			<section class="infoSection scheduling">
+				<h3>Convenient Scheduling</h3>
+				<p>Book your appointment through our secure online platform at your convenience.</p>
+			</section>
+
+			<section class="infoSection patientCare">
+				<h3>Patient Care</h3>
+				<p>Our team specializes in serving patients of all ages and conditions, including:</p>
+				<ul>
+					<li>Elderly patients</li>
+					<li>Patients with mobility challenges</li>
+					<li>Busy professionals</li>
+					<li>Patients requiring frequent blood work</li>
+				</ul>
+			</section>
+		</div>
 	</div>
 {/if}
 
@@ -247,6 +262,26 @@
 		&.right {
 			float: right;
 			margin: 0 0 1rem 1rem;
+		}
+	}
+
+	.infoContent {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(var(--cardMaxWidth), 1fr));
+		gap: 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+		@media (max-width: 580px) {
+			--cardMaxWidth: 100%;
+		}
+	}
+	.infoSection {
+		padding: 2rem;
+		background: #f9f9f9;
+		border-radius: 10px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		h3 {
+			text-decoration: underline;
 		}
 	}
 

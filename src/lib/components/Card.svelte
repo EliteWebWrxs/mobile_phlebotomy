@@ -25,6 +25,7 @@
 		position: relative;
 		gap: 2rem;
 		box-shadow: 0 0.5rem 1.25rem 0 oklch(0 0 0 / 0.4);
+		height: 100%;
 	}
 
 	.cardImage {

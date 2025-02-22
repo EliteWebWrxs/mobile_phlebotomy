@@ -1,6 +1,7 @@
 :root {
 	--primaryColor: #e15a9c;
 	--secondaryColor: #038bc7;
+	--cardMaxWidth: 500px;
 
 	interpolate-size: allow-keywords;
 }
