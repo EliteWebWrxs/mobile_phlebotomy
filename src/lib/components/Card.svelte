@@ -26,6 +26,11 @@
 		gap: 2rem;
 		box-shadow: 0 0.5rem 1.25rem 0 oklch(0 0 0 / 0.4);
 		height: 100%;
+		@media (max-width: 768px) {
+			grid-template-columns: 1fr;
+			grid-template-rows: [image-start] 1fr [image-end content-start] 1fr [content-end];
+			gap: 0;
+		}
 	}
 
 	.cardImage {
@@ -37,7 +42,7 @@
 	}
 
 	.cardTitle {
-		font-size: 2.75rem;
+		font-size: clamp(2.5rem, 8vw, 2.75rem);
 		font-weight: 600;
 		color: var(--secondaryColor);
 		margin: 0;

@@ -1,5 +1,5 @@
 <script>
-	import { BloodDrawB } from '$lib/images';
+	import { Louwana } from '$lib/images';
 </script>
 
 <svelte:head>
@@ -12,6 +12,7 @@
 <h1 class="pageTitle">About</h1>
 
 <div class="contentContainer">
+	<div class="imgContainer right"><img src={Louwana} alt="Louwana" /></div>
 	<p>
 		I have always had a deep passion for healthcare and a commitment to making medical services more
 		accessible and convenient for everyone. Throughout my career, I have seen firsthand how
@@ -20,7 +21,7 @@
 		sometimes waiting hours for transportation just to get the lab work their doctors have ordered.
 		Seeing these challenges inspired me to take action.
 	</p>
-	<div class="imgContainer right"><img src={BloodDrawB} alt="Blood Draw" /></div>
+
 	<p>
 		That’s why I founded Helping Hands Mobile Phlebotomy—to bring the lab to you. My goal is to
 		provide a compassionate, stress-free experience by offering high-quality phlebotomy services in
@@ -46,5 +47,8 @@
 				float: none;
 			}
 		}
+	}
+	p {
+		margin-top: 0;
 	}
 </style>
