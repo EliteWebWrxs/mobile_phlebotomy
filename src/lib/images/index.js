@@ -9,6 +9,8 @@ import Doctors from './doctors.webp';
 import holdingHands from './holdingHands.webp';
 import WithPatient from './withPatient1.webp';
 import WithPatient2 from './withPatient2.webp';
+import WithKid from './withKid.webp';
+import Phlebotomist4 from './phlebotomist4.webp';
 
 export {
 	BloodDraw,
@@ -21,5 +23,7 @@ export {
 	Doctors,
 	holdingHands,
 	WithPatient,
-	WithPatient2
+	WithPatient2,
+	WithKid,
+	Phlebotomist4
 };

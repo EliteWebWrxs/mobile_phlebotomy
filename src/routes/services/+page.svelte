@@ -1,6 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
-	import { Doctors, holdingHands, WithPatient, WithPatient2 } from '$lib/images';
+	import { Doctors, holdingHands, WithPatient, WithPatient2, WithKid } from '$lib/images';
 </script>
 
 <svelte:head>
@@ -65,6 +65,31 @@
 			</div>
 			<div class="imgContainer">
 				<img src={Doctors} alt="Doctor and Phlebotomist" />
+			</div>
+		</div>
+	</section>
+	<section class="serviceSection" in:fade={{ duration: 500, delay: 500 }}>
+		<h2>Pediatric Care</h2>
+		<div class="serviceSectionContent">
+			<div class="serviceSectionText">
+				<p>
+					We understand that blood draws can be particularly stressful for children and their
+					parents. Our pediatric phlebotomy services are designed with young patients in mind,
+					featuring:
+				</p>
+				<ul>
+					<li>Gentle, child-friendly techniques</li>
+					<li>Age-appropriate distraction methods</li>
+					<li>Patient, compassionate approach</li>
+					<li>Specialized equipment for smaller veins</li>
+				</ul>
+				<p>
+					Our experienced phlebotomists are specially trained to work with children, making the
+					experience as quick, painless, and stress-free as possible for both the child and parents.
+				</p>
+			</div>
+			<div class="imgContainer">
+				<img src={WithKid} alt="Pediatric Care" />
 			</div>
 		</div>
 	</section>

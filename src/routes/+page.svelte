@@ -3,7 +3,8 @@
 	import { scale, fade, fly } from 'svelte/transition';
 	import Logo from '$lib/components/Logo.svelte';
 	import Card from '$lib/components/Card.svelte';
-	import { BloodDraw, Phlebotomist, Calendar, BloodDrawB, BloodDrawC } from '$lib/images';
+	import Icon from '$lib/components/Icon.svelte';
+	import { BloodDraw, Phlebotomist, Calendar } from '$lib/images';
 
 	let isLoaded = false;
 
@@ -80,6 +81,7 @@
 		<div class="infoContent">
 			<section class="infoSection quality">
 				<h3>Quality Collection</h3>
+
 				<p>
 					Our licensed and insured phlebotomists bring expertise to every appointment. We maintain
 					the highest standards in blood collection, including:
@@ -94,7 +96,8 @@
 			</section>
 
 			<section class="infoSection labs">
-				<h3>Laboratory Partnerships</h3>
+				<h3>Laboratory Usage</h3>
+
 				<p>
 					We ensure reliable specimen delivery to leading laboratories including Advent Health,
 					Quest Diagnostics, and LabCorp. Our team follows strict protocols for temperature control
@@ -121,10 +124,18 @@
 				<p>Our team specializes in serving patients of all ages and conditions, including:</p>
 				<ul>
 					<li>Elderly patients</li>
+					<li>Pediatric patients</li>
 					<li>Patients with mobility challenges</li>
 					<li>Busy professionals</li>
 					<li>Patients requiring frequent blood work</li>
 				</ul>
+			</section>
+			<section class="infoSection pricing">
+				<h3>Pricing</h3>
+				<p>
+					Pricing varies based on the services required. Please contact us for information about our
+					competitive pricing.
+				</p>
 			</section>
 		</div>
 	</div>

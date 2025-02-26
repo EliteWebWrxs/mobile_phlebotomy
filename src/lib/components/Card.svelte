@@ -26,6 +26,7 @@
 		gap: 2rem;
 		box-shadow: 0 0.5rem 1.25rem 0 oklch(0 0 0 / 0.4);
 		height: 100%;
+		align-items: center;
 		@media (max-width: 768px) {
 			grid-template-columns: 1fr;
 			grid-template-rows: [image-start] 1fr [image-end content-start] 1fr [content-end];

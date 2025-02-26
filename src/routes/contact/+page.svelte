@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { imask } from 'svelte-imask';
 	import { fade } from 'svelte/transition';
+	import { Phlebotomist4 } from '$lib/images';
 	const maskConfig = { mask: '(000) 000-0000' };
 
 	let formData = $state({
@@ -111,66 +112,71 @@
 			required).
 		</p>
 
-		{#if status.success}
-			<div class="success">Thank you for your message! We'll get back to you soon.</div>
-		{:else}
-			<form class="contactForm" onsubmit={handleSubmit}>
-				<div class="formGroup">
-					<label for="name">Name:</label>
-					<input
-						type="text"
-						id="name"
-						bind:value={formData.name}
-						oninput={() => handleInput('name')}
-					/>
-					{#if errors.name}
-						<div class="error" transition:fade>{errors.name}</div>
+		<div class="contactContainer">
+			<div class="imgContainer">
+				<img src={Phlebotomist4} alt="Phlebotomist" />
+			</div>
+			{#if status.success}
+				<div class="success">Thank you for your message! We'll get back to you soon.</div>
+			{:else}
+				<form class="contactForm" onsubmit={handleSubmit}>
+					<div class="formGroup">
+						<label for="name">Name:</label>
+						<input
+							type="text"
+							id="name"
+							bind:value={formData.name}
+							oninput={() => handleInput('name')}
+						/>
+						{#if errors.name}
+							<div class="error" transition:fade>{errors.name}</div>
+						{/if}
+					</div>
+					<div class="formGroup">
+						<label for="email">Email:</label>
+						<input
+							type="text"
+							id="email"
+							bind:value={formData.email}
+							oninput={() => handleInput('email')}
+						/>
+						{#if errors.email}
+							<div class="error" transition:fade>{errors.email}</div>
+						{/if}
+					</div>
+					<div class="formGroup">
+						<label for="phone">Phone:</label>
+						<input
+							use:imask={maskConfig}
+							type="tel"
+							id="phone"
+							bind:value={formData.phone}
+							oninput={() => handleInput('phone')}
+						/>
+						{#if errors.phone}
+							<div class="error" transition:fade>{errors.phone}</div>
+						{/if}
+					</div>
+					<div class="formGroup">
+						<label for="message">Message:</label>
+						<textarea
+							id="message"
+							bind:value={formData.message}
+							oninput={() => handleInput('message')}
+						></textarea>
+						{#if errors.message}
+							<div class="error" transition:fade>{errors.message}</div>
+						{/if}
+					</div>
+					<button type="submit" disabled={status.sending}>
+						{status.sending ? 'Sending...' : 'Submit'}
+					</button>
+					{#if status.error}
+						<div class="error" transition:fade>{status.error}</div>
 					{/if}
-				</div>
-				<div class="formGroup">
-					<label for="email">Email:</label>
-					<input
-						type="text"
-						id="email"
-						bind:value={formData.email}
-						oninput={() => handleInput('email')}
-					/>
-					{#if errors.email}
-						<div class="error" transition:fade>{errors.email}</div>
-					{/if}
-				</div>
-				<div class="formGroup">
-					<label for="phone">Phone:</label>
-					<input
-						use:imask={maskConfig}
-						type="tel"
-						id="phone"
-						bind:value={formData.phone}
-						oninput={() => handleInput('phone')}
-					/>
-					{#if errors.phone}
-						<div class="error" transition:fade>{errors.phone}</div>
-					{/if}
-				</div>
-				<div class="formGroup">
-					<label for="message">Message:</label>
-					<textarea
-						id="message"
-						bind:value={formData.message}
-						oninput={() => handleInput('message')}
-					></textarea>
-					{#if errors.message}
-						<div class="error" transition:fade>{errors.message}</div>
-					{/if}
-				</div>
-				<button type="submit" disabled={status.sending}>
-					{status.sending ? 'Sending...' : 'Submit'}
-				</button>
-				{#if status.error}
-					<div class="error" transition:fade>{status.error}</div>
-				{/if}
-			</form>
-		{/if}
+				</form>
+			{/if}
+		</div>
 	</div>
 </div>
 
@@ -178,11 +184,13 @@
 	h2 {
 		font-size: 2rem;
 		margin-bottom: 0.25rem;
+		text-align: center;
 	}
 
 	p {
 		font-size: 1.25rem;
 		margin: 0.25rem 0 1rem;
+		text-align: center;
 	}
 
 	.contactForm {
@@ -190,8 +198,9 @@
 		flex-direction: column;
 		gap: 1rem;
 		width: 100%;
-		max-width: 600px;
 		margin: 0 auto;
+		grid-area: content;
+		container-type: inline-size;
 	}
 
 	.formGroup {
@@ -229,5 +238,18 @@
 	button:disabled {
 		opacity: 0.7;
 		cursor: not-allowed;
+	}
+	.contactContainer {
+		display: grid;
+		grid-template-columns: [img-start] 1.5fr [img-end content-start] 3fr [content-end];
+		gap: 3rem;
+		@container (max-width: 768px) {
+			grid-template-columns: 1fr;
+			grid-template-rows: [content-start] fit-content(100px) [content-end img-start] 1fr [ img-end];
+			gap: 1rem 0;
+		}
+	}
+	.imgContainer {
+		grid-area: img;
 	}
 </style>
