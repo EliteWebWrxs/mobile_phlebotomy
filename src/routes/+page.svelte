@@ -3,7 +3,6 @@
 	import { scale, fade, fly } from 'svelte/transition';
 	import Logo from '$lib/components/Logo.svelte';
 	import Card from '$lib/components/Card.svelte';
-	import Icon from '$lib/components/Icon.svelte';
 	import { BloodDraw, Phlebotomist, Calendar } from '$lib/images';
 
 	let isLoaded = false;
@@ -274,13 +273,6 @@
 		animation:
 			transform 5s ease-in-out infinite both alternate,
 			movement_two 5s ease-in-out infinite both;
-	}
-	.imgContainer {
-		width: 35%;
-		&.right {
-			float: right;
-			margin: 0 0 1rem 1rem;
-		}
 	}
 
 	.infoContent {
