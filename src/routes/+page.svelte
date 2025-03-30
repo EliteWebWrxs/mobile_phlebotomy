@@ -3,7 +3,7 @@
 	import { scale, fade, fly } from 'svelte/transition';
 	import Logo from '$lib/components/Logo.svelte';
 	import Card from '$lib/components/Card.svelte';
-	import { BloodDraw, Phlebotomist, Calendar } from '$lib/images';
+	import { BloodDraw, MainPageImage, Calendar } from '$lib/images';
 
 	let isLoaded = false;
 
@@ -17,7 +17,7 @@
 		{
 			title: 'About Us',
 			body: 'Licensed phlebotomists providing convenient, compassionate care with the highest safety standards.',
-			image: Phlebotomist,
+			image: MainPageImage,
 			link: '/about'
 		},
 		{

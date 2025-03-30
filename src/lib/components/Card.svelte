@@ -29,7 +29,7 @@
 		align-items: center;
 		@media (max-width: 768px) {
 			grid-template-columns: 1fr;
-			grid-template-rows: [image-start] 1fr [image-end content-start] 1fr [content-end];
+			/* grid-template-rows: [image-start] 1fr [image-end content-start] 1fr [content-end]; */
 			gap: 0;
 		}
 	}
