@@ -5,7 +5,7 @@
 	import '$lib/css/reset.css';
 	import '$lib/css/styles.css';
 
-	let title = $state('MSD Web Pro');
+	let title = $state('Helping Hands Mobile Phlebotomy');
 	let currentPage = $state('');
 	let { data, children } = $props();
 
